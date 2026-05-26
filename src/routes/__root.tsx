@@ -79,10 +79,14 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
       { name: "description", content: "Maison Aurelia crafts unforgettable luxury weddings — design, décor, photography, catering and end-to-end planning across India and beyond." },
       { name: "author", content: "Maison Aurelia" },
       { property: "og:title", content: "Maison Aurelia — Luxury Wedding Planners" },
-      { property: "og:description", content: "Cinematic, end-to-end luxury wedding planning. Décor, photography, venues, entertainment and more." },
+      { property: "og:description", content: "Maison Aurelia crafts unforgettable luxury weddings — design, décor, photography, catering and end-to-end planning across India and beyond." },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary" },
       { name: "twitter:site", content: "@Lovable" },
+      { name: "twitter:title", content: "Maison Aurelia — Luxury Wedding Planners" },
+      { name: "twitter:description", content: "Maison Aurelia crafts unforgettable luxury weddings — design, décor, photography, catering and end-to-end planning across India and beyond." },
+      { property: "og:image", content: "https://pub-bb2e103a32db4e198524a2e9ed8f35b4.r2.dev/b2fdf237-47b4-45df-9471-972522b22b49/id-preview-d82d2ef7--2a4160d1-5c5e-4590-ab14-471816725361.lovable.app-1779801450833.png" },
+      { name: "twitter:image", content: "https://pub-bb2e103a32db4e198524a2e9ed8f35b4.r2.dev/b2fdf237-47b4-45df-9471-972522b22b49/id-preview-d82d2ef7--2a4160d1-5c5e-4590-ab14-471816725361.lovable.app-1779801450833.png" },
     ],
     links: [
       {
