@@ -7,8 +7,34 @@ import { Reveal } from "@/components/site/Reveal";
 import { GALLERY, IMG } from "@/lib/data";
 import { Link } from "@tanstack/react-router";
 
+const CANONICAL = "https://everlasting-journeys.lovable.app/gallery";
+
 export const Route = createFileRoute("/gallery")({
   component: GalleryPage,
+  head: () => ({
+    meta: [
+      { title: "Wedding Gallery & Portfolio — Maison Aurelia" },
+      { name: "description", content: "Browse Maison Aurelia's portfolio of luxury weddings: decoration, reception, couple shoots and catering moments from celebrations across India." },
+      { property: "og:title", content: "Wedding Gallery & Portfolio — Maison Aurelia" },
+      { property: "og:description", content: "A curated portfolio of luxury weddings designed by Maison Aurelia — décor, receptions, couple shoots and catering." },
+      { property: "og:url", content: CANONICAL },
+      { property: "og:type", content: "website" },
+      { property: "og:image", content: "https://images.unsplash.com/photo-1530023367847-a683933f4172?auto=format&fit=crop&w=2000&q=80" },
+    ],
+    links: [{ rel: "canonical", href: CANONICAL }],
+    scripts: [
+      {
+        type: "application/ld+json",
+        children: JSON.stringify({
+          "@context": "https://schema.org",
+          "@type": "CollectionPage",
+          name: "Maison Aurelia Wedding Portfolio",
+          url: CANONICAL,
+          description: "Curated portfolio of luxury weddings — décor, receptions, couple shoots and catering.",
+        }),
+      },
+    ],
+  }),
 });
 
 const CATEGORIES = ["All", "Decoration", "Reception", "Couple Shoots", "Catering"] as const;
@@ -73,7 +99,7 @@ function GalleryPage() {
                   className="block w-full mb-4 md:mb-5 relative group overflow-hidden rounded-2xl"
                   style={{ aspectRatio: i % 3 === 0 ? "3/4" : i % 3 === 1 ? "4/5" : "1/1" }}
                 >
-                  <img src={img.src} alt={img.category} loading="lazy" className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" />
+                  <img src={img.src} alt={img.alt} loading="lazy" className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" />
                   <div className="absolute inset-0 bg-gradient-to-t from-[#d4af37]/80 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
                   <span className="absolute bottom-4 left-4 text-white text-xs uppercase tracking-[0.25em] opacity-0 group-hover:opacity-100 transition-opacity duration-500">
                     {img.category}

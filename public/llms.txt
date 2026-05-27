@@ -1,0 +1,13 @@
+# Maison Aurelia
+
+> Luxury wedding planners crafting end-to-end celebrations across India and beyond — design, décor, photography, catering, venues and entertainment.
+
+Maison Aurelia is a full-service luxury wedding planning house. We produce intimate ceremonies and multi-day destination celebrations, handling every detail from creative direction to on-the-day coordination.
+
+## Pages
+
+- [Home](/): Brand overview, services, gallery preview and testimonials.
+- [About](/about): Our story, team, process and philosophy.
+- [Services](/services): Planning, décor, photography, catering, venues, entertainment and pricing packages.
+- [Gallery](/gallery): Filterable portfolio of past weddings — decoration, reception, couple shoots, catering.
+- [Contact](/contact): Enquiry form, studio location, contact details and FAQs.

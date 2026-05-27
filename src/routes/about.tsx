@@ -5,8 +5,22 @@ import { Reveal, SectionTitle, fadeUp, stagger } from "@/components/site/Reveal"
 import { Counter } from "@/components/site/Counter";
 import { IMG, TEAM, PROCESS } from "@/lib/data";
 
+const CANONICAL = "https://everlasting-journeys.lovable.app/about";
+
 export const Route = createFileRoute("/about")({
   component: AboutPage,
+  head: () => ({
+    meta: [
+      { title: "About Maison Aurelia — Our Story & Team" },
+      { name: "description", content: "Meet Maison Aurelia: the creative team, philosophy and process behind India's most quietly celebrated luxury wedding planning house." },
+      { property: "og:title", content: "About Maison Aurelia — Our Story & Team" },
+      { property: "og:description", content: "The story, team and process behind Maison Aurelia's luxury weddings." },
+      { property: "og:url", content: CANONICAL },
+      { property: "og:type", content: "website" },
+      { property: "og:image", content: "https://images.unsplash.com/photo-1525772764200-be829a350797?auto=format&fit=crop&w=2000&q=80" },
+    ],
+    links: [{ rel: "canonical", href: CANONICAL }],
+  }),
 });
 
 function PageBanner({ title, image, crumb }: { title: string; image: string; crumb: string }) {

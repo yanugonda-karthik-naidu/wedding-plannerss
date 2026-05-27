@@ -18,8 +18,52 @@ import { Reveal, SectionTitle, fadeUp, stagger } from "@/components/site/Reveal"
 import { Counter } from "@/components/site/Counter";
 import { GALLERY, IMG, SERVICES, TESTIMONIALS } from "@/lib/data";
 
+const CANONICAL = "https://everlasting-journeys.lovable.app/";
+
 export const Route = createFileRoute("/")({
   component: HomePage,
+  head: () => ({
+    meta: [
+      { title: "Maison Aurelia — Luxury Wedding Planners in India" },
+      { name: "description", content: "Maison Aurelia designs end-to-end luxury weddings — décor, photography, catering, venues and entertainment — across India and beyond." },
+      { property: "og:title", content: "Maison Aurelia — Luxury Wedding Planners in India" },
+      { property: "og:description", content: "End-to-end luxury wedding planning — from intimate ceremonies to multi-day destination celebrations." },
+      { property: "og:url", content: CANONICAL },
+      { property: "og:type", content: "website" },
+    ],
+    links: [{ rel: "canonical", href: CANONICAL }],
+    scripts: [
+      {
+        type: "application/ld+json",
+        children: JSON.stringify({
+          "@context": "https://schema.org",
+          "@graph": [
+            {
+              "@type": "Organization",
+              name: "Maison Aurelia",
+              url: CANONICAL,
+              logo: "https://everlasting-journeys.lovable.app/favicon.ico",
+              description: "Luxury wedding planners crafting end-to-end celebrations across India and beyond.",
+              address: {
+                "@type": "PostalAddress",
+                streetAddress: "22 Heritage Lane, Bandra West",
+                addressLocality: "Mumbai",
+                postalCode: "400050",
+                addressCountry: "IN",
+              },
+              telephone: "+91-98765-43210",
+              email: "hello@maisonaurelia.com",
+            },
+            {
+              "@type": "WebSite",
+              name: "Maison Aurelia",
+              url: CANONICAL,
+            },
+          ],
+        }),
+      },
+    ],
+  }),
 });
 
 const iconMap: Record<string, React.ComponentType<{ size?: number }>> = {
@@ -226,7 +270,7 @@ function HomePage() {
                   className="block w-full mb-4 md:mb-5 relative group overflow-hidden rounded-2xl"
                   style={{ aspectRatio: i % 3 === 1 ? "3/4" : i % 3 === 2 ? "4/5" : "1/1" }}
                 >
-                  <img src={img.src} alt={img.category} loading="lazy" className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" />
+                  <img src={img.src} alt={img.alt} loading="lazy" className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" />
                   <div className="absolute inset-0 bg-gradient-to-t from-[#d4af37]/80 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
                   <span className="absolute bottom-4 left-4 text-white text-xs uppercase tracking-[0.25em] opacity-0 group-hover:opacity-100 transition-opacity duration-500">
                     {img.category}
