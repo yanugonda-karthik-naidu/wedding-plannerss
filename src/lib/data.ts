@@ -20,18 +20,18 @@ export const IMG = {
 };
 
 export const GALLERY = [
-  { src: "https://images.unsplash.com/photo-1519741497674-611481863552?auto=format&fit=crop&w=1200&q=80", category: "Couple Shoots", h: 1400 },
-  { src: "https://images.unsplash.com/photo-1511285560929-80b456fea0bc?auto=format&fit=crop&w=1200&q=80", category: "Decoration", h: 900 },
-  { src: "https://images.unsplash.com/photo-1465495976277-4387d4b0b4c6?auto=format&fit=crop&w=1200&q=80", category: "Reception", h: 1200 },
-  { src: "https://images.unsplash.com/photo-1519225421980-715cb0215aed?auto=format&fit=crop&w=1200&q=80", category: "Decoration", h: 1000 },
-  { src: "https://images.unsplash.com/photo-1606216794074-735e91aa2c92?auto=format&fit=crop&w=1200&q=80", category: "Couple Shoots", h: 1300 },
-  { src: "https://images.unsplash.com/photo-1519741497674-611481863552?auto=format&fit=crop&w=1200&q=80", category: "Reception", h: 950 },
-  { src: "https://images.unsplash.com/photo-1604017011826-d3b4c23f8914?auto=format&fit=crop&w=1200&q=80", category: "Catering", h: 1100 },
-  { src: "https://images.unsplash.com/photo-1530023367847-a683933f4172?auto=format&fit=crop&w=1200&q=80", category: "Decoration", h: 1250 },
-  { src: "https://images.unsplash.com/photo-1525772764200-be829a350797?auto=format&fit=crop&w=1200&q=80", category: "Couple Shoots", h: 1050 },
-  { src: "https://images.unsplash.com/photo-1511795409834-ef04bbd61622?auto=format&fit=crop&w=1200&q=80", category: "Reception", h: 1350 },
-  { src: "https://images.unsplash.com/photo-1464366400600-7168b8af9bc3?auto=format&fit=crop&w=1200&q=80", category: "Catering", h: 900 },
-  { src: "https://images.unsplash.com/photo-1583939003579-730e3918a45a?auto=format&fit=crop&w=1200&q=80", category: "Decoration", h: 1200 },
+  { src: "https://images.unsplash.com/photo-1519741497674-611481863552?auto=format&fit=crop&w=1200&q=80", category: "Couple Shoots", alt: "Romantic couple portrait at golden hour", h: 1400 },
+  { src: "https://images.unsplash.com/photo-1511285560929-80b456fea0bc?auto=format&fit=crop&w=1200&q=80", category: "Decoration", alt: "Bespoke floral wedding decoration with candles", h: 900 },
+  { src: "https://images.unsplash.com/photo-1465495976277-4387d4b0b4c6?auto=format&fit=crop&w=1200&q=80", category: "Reception", alt: "Elegant wedding reception hall setup", h: 1200 },
+  { src: "https://images.unsplash.com/photo-1519225421980-715cb0215aed?auto=format&fit=crop&w=1200&q=80", category: "Decoration", alt: "Outdoor mandap floral arch design", h: 1000 },
+  { src: "https://images.unsplash.com/photo-1606216794074-735e91aa2c92?auto=format&fit=crop&w=1200&q=80", category: "Couple Shoots", alt: "Cinematic pre-wedding couple photography", h: 1300 },
+  { src: "https://images.unsplash.com/photo-1519741497674-611481863552?auto=format&fit=crop&w=1200&q=80", category: "Reception", alt: "Luxury wedding reception table styling", h: 950 },
+  { src: "https://images.unsplash.com/photo-1604017011826-d3b4c23f8914?auto=format&fit=crop&w=1200&q=80", category: "Catering", alt: "Plated fine dining wedding catering course", h: 1100 },
+  { src: "https://images.unsplash.com/photo-1530023367847-a683933f4172?auto=format&fit=crop&w=1200&q=80", category: "Decoration", alt: "Hanging floral installation over ceremony aisle", h: 1250 },
+  { src: "https://images.unsplash.com/photo-1525772764200-be829a350797?auto=format&fit=crop&w=1200&q=80", category: "Couple Shoots", alt: "Bride and groom candid moment outdoors", h: 1050 },
+  { src: "https://images.unsplash.com/photo-1511795409834-ef04bbd61622?auto=format&fit=crop&w=1200&q=80", category: "Reception", alt: "Evening wedding reception with ambient lighting", h: 1350 },
+  { src: "https://images.unsplash.com/photo-1464366400600-7168b8af9bc3?auto=format&fit=crop&w=1200&q=80", category: "Catering", alt: "Wedding dessert table with cake display", h: 900 },
+  { src: "https://images.unsplash.com/photo-1583939003579-730e3918a45a?auto=format&fit=crop&w=1200&q=80", category: "Decoration", alt: "Romantic candle-lit reception decoration", h: 1200 },
 ];
 
 export const SERVICES = [
@@ -40,6 +40,7 @@ export const SERVICES = [
     short: "End-to-end orchestration of your big day with a dedicated planner.",
     icon: "GiDiamondRing",
     img: "https://images.unsplash.com/photo-1519741497674-611481863552?auto=format&fit=crop&w=1400&q=80",
+    alt: "Full-service luxury wedding planning consultation",
     features: ["Personal wedding director", "Detailed budgeting & timelines", "Vendor coordination", "On-the-day management"],
   },
   {
@@ -47,6 +48,7 @@ export const SERVICES = [
     short: "Couture floral installations, mandap design and ambient styling.",
     icon: "GiFlowerPot",
     img: "https://images.unsplash.com/photo-1511285560929-80b456fea0bc?auto=format&fit=crop&w=1400&q=80",
+    alt: "Bespoke wedding decoration and floral design",
     features: ["Bespoke mandap & stage design", "Floral installations", "Tablescapes & centerpieces", "Cinematic lighting design"],
   },
   {
@@ -54,6 +56,7 @@ export const SERVICES = [
     short: "Cinematic films and timeless portraits by award-winning artists.",
     icon: "MdCameraAlt",
     img: "https://images.unsplash.com/photo-1606216794074-735e91aa2c92?auto=format&fit=crop&w=1400&q=80",
+    alt: "Cinematic wedding photography and filmmaking",
     features: ["Pre-wedding shoots", "Candid photography", "Cinematic 4K films", "Drone coverage"],
   },
   {
@@ -61,6 +64,7 @@ export const SERVICES = [
     short: "Curated multi-cuisine menus crafted by celebrity chefs.",
     icon: "MdRestaurant",
     img: "https://images.unsplash.com/photo-1464366400600-7168b8af9bc3?auto=format&fit=crop&w=1400&q=80",
+    alt: "Gourmet wedding catering and bar service",
     features: ["Live food stations", "International cuisines", "Premium bar service", "Custom cake & desserts"],
   },
   {
@@ -68,6 +72,7 @@ export const SERVICES = [
     short: "Handpicked palaces, beach resorts and destination venues.",
     icon: "MdLocationOn",
     img: "https://images.unsplash.com/photo-1519225421980-715cb0215aed?auto=format&fit=crop&w=1400&q=80",
+    alt: "Luxury destination wedding venue selection",
     features: ["Destination venues", "Heritage palaces", "Beach & garden venues", "Logistics & travel desk"],
   },
   {
@@ -75,6 +80,7 @@ export const SERVICES = [
     short: "Live bands, DJs, choreographers and surprise performances.",
     icon: "MdMusicNote",
     img: "https://images.unsplash.com/photo-1465495976277-4387d4b0b4c6?auto=format&fit=crop&w=1400&q=80",
+    alt: "Live wedding entertainment and stage performance",
     features: ["Live bands & singers", "Celebrity DJs", "Choreography", "Special performances"],
   },
 ] as const;
