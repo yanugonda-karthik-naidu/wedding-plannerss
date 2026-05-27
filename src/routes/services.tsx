@@ -63,7 +63,7 @@ function ServicesPage() {
               <div key={s.title} className={`grid lg:grid-cols-2 gap-12 lg:gap-20 items-center ${reverse ? "lg:[&>div:first-child]:order-2" : ""}`}>
                 <Reveal>
                   <div className="relative aspect-[5/6] rounded-[2rem] overflow-hidden">
-                    <img src={s.img} alt={s.alt ?? `${s.title} wedding service`} loading="lazy" className="w-full h-full object-cover" />
+                    <img src={s.img} alt={s.alt} loading="lazy" className="w-full h-full object-cover" />
                     <div className="absolute top-5 left-5 bg-white/95 backdrop-blur px-4 py-2 rounded-full text-xs uppercase tracking-[0.25em] text-[#b8941f]">
                       0{i + 1}
                     </div>
