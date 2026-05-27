@@ -59,12 +59,12 @@ export default function Footer() {
               <li>22 Heritage Lane,<br />Bandra West, Mumbai 400050</li>
               <li>+91 98765 43210</li>
               <li>hello@maisonaurelia.com</li>
-              <li className="text-white/50">Mon–Sat · 10am–7pm</li>
+              <li className="text-white/70">Mon–Sat · 10am–7pm</li>
             </ul>
           </div>
         </div>
 
-        <div className="mt-16 pt-8 border-t border-white/10 flex flex-col md:flex-row items-center justify-between gap-4 text-xs text-white/40">
+        <div className="mt-16 pt-8 border-t border-white/10 flex flex-col md:flex-row items-center justify-between gap-4 text-xs text-white/70">
           <p>© {new Date().getFullYear()} Maison Aurelia. All rights reserved.</p>
           <p className="tracking-[0.2em] uppercase">Crafted with devotion</p>
         </div>
