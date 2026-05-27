@@ -6,8 +6,37 @@ import { FiChevronDown, FiSend } from "react-icons/fi";
 import { Reveal, SectionTitle } from "@/components/site/Reveal";
 import { IMG, FAQS } from "@/lib/data";
 
+const CANONICAL = "https://everlasting-journeys.lovable.app/contact";
+
 export const Route = createFileRoute("/contact")({
   component: ContactPage,
+  head: () => ({
+    meta: [
+      { title: "Contact Maison Aurelia — Book a Wedding Consultation" },
+      { name: "description", content: "Get in touch with Maison Aurelia to plan your luxury wedding. Book a complimentary consultation, view our Mumbai studio details and FAQs." },
+      { property: "og:title", content: "Contact Maison Aurelia — Book a Wedding Consultation" },
+      { property: "og:description", content: "Reach our Mumbai studio to start planning your bespoke wedding celebration with Maison Aurelia." },
+      { property: "og:url", content: CANONICAL },
+      { property: "og:type", content: "website" },
+    ],
+    links: [{ rel: "canonical", href: CANONICAL }],
+    scripts: [
+      {
+        type: "application/ld+json",
+        children: JSON.stringify({
+          "@context": "https://schema.org",
+          "@type": "FAQPage",
+          mainEntity: [
+            { "@type": "Question", name: "How far in advance should we book?", acceptedAnswer: { "@type": "Answer", text: "We recommend booking 8–12 months in advance for full-scale weddings, especially for destinations. Intimate ceremonies can sometimes be planned in 3–4 months." } },
+            { "@type": "Question", name: "Do you handle destination weddings?", acceptedAnswer: { "@type": "Answer", text: "Absolutely. We've produced weddings in Udaipur, Jaipur, Goa, Bali, Tuscany and beyond. Our team manages logistics, travel and on-ground coordination end-to-end." } },
+            { "@type": "Question", name: "Can packages be customized?", acceptedAnswer: { "@type": "Answer", text: "Yes — every wedding is bespoke. Our packages are starting points, and we tailor every element to your taste, guest count and budget." } },
+            { "@type": "Question", name: "What is included in the wedding planning package?", acceptedAnswer: { "@type": "Answer", text: "Full creative direction, vendor management, budgeting, design, production, on-day coordination and a dedicated planner from day one to the final farewell." } },
+            { "@type": "Question", name: "Do you offer pre-wedding shoots?", acceptedAnswer: { "@type": "Answer", text: "Yes, our cinematic pre-wedding films and portraits are a signature offering, and can be shot at locations of your choice in India or abroad." } },
+          ],
+        }),
+      },
+    ],
+  }),
 });
 
 const contactCards = [
@@ -73,13 +102,13 @@ function ContactPage() {
                 Tell us about your <em className="italic text-gradient-gold not-italic-not">day.</em>
               </h2>
               <form onSubmit={onSubmit} className="mt-10 grid sm:grid-cols-2 gap-5">
-                <Input label="Full Name" type="text" placeholder="Your name" />
-                <Input label="Phone" type="tel" placeholder="+91" />
-                <Input label="Wedding Date" type="date" />
+                <Input id="contact-name" label="Full Name" type="text" placeholder="Your name" />
+                <Input id="contact-phone" label="Phone" type="tel" placeholder="+91" />
+                <Input id="contact-date" label="Wedding Date" type="date" />
                 <div>
-                  <label className="text-[10px] uppercase tracking-[0.28em] text-[#b8941f]">Service Required</label>
+                  <label htmlFor="contact-service" className="text-[10px] uppercase tracking-[0.28em] text-[#b8941f]">Service Required</label>
                   <div className="relative mt-2">
-                    <select required className="w-full appearance-none bg-[#fff9f5] border border-[#d4af37]/25 rounded-full px-5 py-4 text-sm focus:outline-none focus:border-[#d4af37] focus:bg-white transition-all">
+                    <select id="contact-service" name="service" required className="w-full appearance-none bg-[#fff9f5] border border-[#d4af37]/25 rounded-full px-5 py-4 text-sm focus:outline-none focus:border-[#d4af37] focus:bg-white transition-all">
                       <option>Full Wedding Planning</option>
                       <option>Decoration & Florals</option>
                       <option>Photography & Film</option>
@@ -91,8 +120,8 @@ function ContactPage() {
                   </div>
                 </div>
                 <div className="sm:col-span-2">
-                  <label className="text-[10px] uppercase tracking-[0.28em] text-[#b8941f]">Tell us your vision</label>
-                  <textarea rows={5} placeholder="Share your story, dates, locations…" className="w-full mt-2 bg-[#fff9f5] border border-[#d4af37]/25 rounded-3xl px-5 py-4 text-sm focus:outline-none focus:border-[#d4af37] focus:bg-white transition-all resize-none" />
+                  <label htmlFor="contact-vision" className="text-[10px] uppercase tracking-[0.28em] text-[#b8941f]">Tell us your vision</label>
+                  <textarea id="contact-vision" name="vision" rows={5} placeholder="Share your story, dates, locations…" className="w-full mt-2 bg-[#fff9f5] border border-[#d4af37]/25 rounded-3xl px-5 py-4 text-sm focus:outline-none focus:border-[#d4af37] focus:bg-white transition-all resize-none" />
                 </div>
                 <div className="sm:col-span-2 flex flex-col sm:flex-row sm:items-center gap-4 mt-2">
                   <button type="submit" className="btn-gold w-full sm:w-auto">
@@ -157,11 +186,13 @@ function ContactPage() {
   );
 }
 
-function Input({ label, type, placeholder }: { label: string; type: string; placeholder?: string }) {
+function Input({ id, label, type, placeholder }: { id: string; label: string; type: string; placeholder?: string }) {
   return (
     <div>
-      <label className="text-[10px] uppercase tracking-[0.28em] text-[#b8941f]">{label}</label>
+      <label htmlFor={id} className="text-[10px] uppercase tracking-[0.28em] text-[#b8941f]">{label}</label>
       <input
+        id={id}
+        name={id}
         required
         type={type}
         placeholder={placeholder}
